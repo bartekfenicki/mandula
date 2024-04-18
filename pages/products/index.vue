@@ -6,7 +6,7 @@
     </p>
     </template>
 <script setup>
-    import Item from './item.vue';
+
 
         definePageMeta({
             layout: 'products'
