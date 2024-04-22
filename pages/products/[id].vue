@@ -1,18 +1,25 @@
 <template>
     
-    <p>
-        product details for {{ id }}
-    </p>
-    </template>
-    <script setup>
+    <div>
+   <productDetails :product="product"/>
 
-    const { id } = useRoute().params
+  </div>
+
+</template>
+
+<script setup>
+
+    const { id } = useRoute().params;
+    const { data: product } = await useFetch(`/api/dataID`);
 
     definePageMeta({
-            layout: 'products'
-        })
-    </script>
+      layout: 'products'
+    });
+
+</script>
+
+
     
-    <style scoped>
+<style scoped>
     
-    </style>
+</style>
