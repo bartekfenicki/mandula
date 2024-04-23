@@ -1,23 +1,23 @@
 <template>
-    
-    <div>
-   <productDetails :product="product"/>
-
+<div>
+      <div v-for="SingleProduct in SingleProducts"  class="product">
+      <!-- <h2>{{ SingleProduct._rawValue.name }}</h2> -->
+    </div>  
   </div>
-
 </template>
 
-<script setup>
+ <script setup>
 
-    const { id } = useRoute().params;
-    const { data: product } = await useFetch(`/api/dataID`);
+const route = useRoute();
 
-    definePageMeta({
-      layout: 'products'
-    });
+const { data: SingleProducts } = useFetch(`/api/dataID/${route.params.id}`  );
 
-</script>
+console.log(SingleProducts)
 
+definePageMeta({
+  layout: 'products'
+});
+</script> 
 
     
 <style scoped>
