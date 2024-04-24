@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
  const {id}= getRouterParams(event);
     const {Password} = useRuntimeConfig()
 
-    const response = await axios.get(`http://mandula-cakeshop.local/wp-json/wc/v3/products/${id}`, {
+    const response = await axios.get(`https://hanacoric.com/wp-json/wc/v3/products/${id}`, {
       auth: {
         username: 'bartekfenicki',
         password: `${Password}`

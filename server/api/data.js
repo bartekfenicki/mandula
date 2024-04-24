@@ -6,7 +6,7 @@ export default defineEventHandler(async () => {
     const {ConsumerSecret} = useRuntimeConfig()
     const {Password} = useRuntimeConfig()
 
-    const response = await axios.get(`http://mandula-cakeshop.local/wp-json/wc/v3/products?consumer_key=${ConsumerKey}&consumer_secret=${ConsumerSecret}`, {
+    const response = await axios.get(`https://hanacoric.com/wp-json/wc/v3/products?consumer_key=${ConsumerKey}&consumer_secret=${ConsumerSecret}`, {
       auth: {
         username: 'bartekfenicki',
         password: `${Password}`

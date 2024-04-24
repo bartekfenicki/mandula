@@ -1,18 +1,18 @@
 <template>
-<div>
-      <div v-for="SingleProduct in SingleProducts"  class="product">
-      <!-- <h2>{{ SingleProduct._rawValue.name }}</h2> -->
-    </div>  
+  <div>
+    <ProductDetails :product="product" />
   </div>
 </template>
 
  <script setup>
 
+
+
 const route = useRoute();
 
-const { data: SingleProducts } = useFetch(`/api/dataID/${route.params.id}`  );
+const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
 
-console.log(SingleProducts)
+console.log(product)
 
 definePageMeta({
   layout: 'products'
