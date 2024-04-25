@@ -1,12 +1,15 @@
 import axios from 'axios';
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (id) => {
   try {
     const {ConsumerKey} = useRuntimeConfig()
     const {ConsumerSecret} = useRuntimeConfig()
     const {Password} = useRuntimeConfig()
 
-    const response = await axios.get(`http://mandula-cakeshop.local/wp-json/wc/v3/products?consumer_key=${ConsumerKey}&consumer_secret=${ConsumerSecret}`, {
+
+    const uri = `http://mandula-cakeshop.local/wp-json/wc/v3/products/${id}?consumer_key=${ConsumerKey}&consumer_secret=${ConsumerSecret}`
+   
+    const response = await axios.get(uri, {
       auth: {
         username: 'bartekfenicki',
         password: `${Password}`
@@ -18,3 +21,4 @@ export default defineEventHandler(async () => {
     throw error;
   }
 });
+

@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <ProductDetails :product="product" />
+    
+    <div>
+   <productDetails :product="product"/>
+
   </div>
+
 </template>
 
- <script setup>
+<script setup>
 
+    const { id } = useRoute().params;
+    const { data: product } = await useFetch(`/api/dataID`);
 
+    definePageMeta({
+      layout: 'products'
+    });
 
-const route = useRoute();
+</script>
 
-const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
-
-console.log(product)
-
-definePageMeta({
-  layout: 'products'
-});
-</script> 
 
     
 <style scoped>

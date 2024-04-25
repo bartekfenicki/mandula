@@ -11,6 +11,6 @@ nav {
         @apply bg-[#213890] text-white px-3 py-2 rounded-md text-sm w-64 mx-auto
     }
     .card {
-        @apply p-3  rounded-md bg-white shadow-md md:h-full 
+        @apply p-3 rounded-md bg-white shadow-md h-full w-fit
     }
 }

@@ -1,6 +1,6 @@
 <template>
-   <div class="sm:grid lg:grid-cols-3 sm:grid-cols-2">
-      <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" :key="product.id">
+   <div class="flex flex-row">
+      <div class="w-screen flex" v-for="product in products" :key="product.id">
         <productCard :product="product"/>
       </div>
 
