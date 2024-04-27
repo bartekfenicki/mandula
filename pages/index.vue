@@ -1,16 +1,26 @@
 <template>
-    <h1> home </h1>
-    <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Corporis unde ab non nisi optio numquam atque facilis, aliquam 
-        velit expedita dolore nostrum impedit voluptatum cum, quasi maxime,
-         a totam! Corporis!
-    </p>
+    <div class="container-fluid mt-10">
+        <Socials/>
+    </div>
+    <div class="container-fluid flex flex-col justify-center items-center">
+        <h1> Best Sellers </h1>
+        <Bestsellers/>
+    </div>
+    <div class="container-fluid">
+        <exploreTabs/>
+    </div>
+    <div>
+        <newsletter/>
+    </div>
+    <div class="container-fluid flex justify-center">
+        <h1> Our Partners </h1>
+    </div>
     </template>
+    
     <script setup>
-    
+   
     </script>
-    
+
     <style scoped>
     
     </style>

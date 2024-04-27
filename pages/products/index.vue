@@ -1,7 +1,10 @@
 <template>
+  <h2 class="title mt-20">
+      Products
+    </h2>
    <div class="sm:grid lg:grid-cols-3 sm:grid-cols-2">
       <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" :key="product.id">
-        <productCard :product="product"/>
+        <ProductCard :product="product"/>
       </div>
 
   </div>

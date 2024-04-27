@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-nav {
-    @apply bg-white;
+h1 {
+    @apply font-['New_Spirit'] text-[#F0B9AC] text-4xl mt-10
+}
+p {
+    @apply font-['New_Spirit'] text-[#F0B9AC]  
 }
 
 @layer components {
@@ -13,4 +16,10 @@ nav {
     .card {
         @apply p-3  rounded-md bg-white shadow-md md:h-full 
     }
+    .explore-card {
+       @apply h-48 w-48 lg:h-64 lg:w-64 mx-10 my-5 bg-gray-700 border-2 border-[#F0B9AC] shadow-md rounded-lg flex justify-center items-center 
+    }
+    .explore-card-text {
+        @apply text-3xl text-[#fefaf9] mx-5 text-center font-['New_Spirit']
+     }
 }

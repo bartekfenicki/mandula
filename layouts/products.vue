@@ -1,10 +1,8 @@
 <template>
   <Navbar/>
 
-  <div class="container mx-auto p-4">
-    <h2 class="title">
-      Products
-    </h2>
+  <div class="container mx-auto p-4 ">
+   
     <slot />
   </div>
 
