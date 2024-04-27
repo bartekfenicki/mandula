@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="fixed w-full">
     <Navbar/>
   </div>
-  <div class="dick">
-    aubsdiuasd
-  </div>
-  <div class="container mx-auto p-4">
+  <div class="container-fluid">
+    <HeroImg/>
+  </div> 
+  <div class="container-fluid mx-auto">
     <slot />
   </div>
   <BottomNav/>
