@@ -12,8 +12,9 @@
     <div>
         <newsletter/>
     </div>
-    <div class="container-fluid flex justify-center">
-        <h1> Our Partners </h1>
+    <div class="container-fluid flex flex-col justify-center items-center">
+        <h1 class="mb-10"> Our Partners </h1>
+        <Partners/>
     </div>
     </template>
     
@@ -21,6 +22,8 @@
    
     </script>
 
-    <style scoped>
-    
+    <style>
+    body {
+        background-color: #FDF1EE;
+    }
     </style>
