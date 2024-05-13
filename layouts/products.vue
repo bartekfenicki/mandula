@@ -1,19 +1,14 @@
 <template>
   <Navbar/>
-
-  <div class="container mx-auto p-4 ">
-   
-    <slot />
-  </div>
-
-  <footer>
-
-  
-
-  </footer>
+    <div class="mx-auto p-4 ">
+      <slot />
+    </div>
+  <bottomNav/>
 </template>
 
 <script setup>
+
+
 
 </script>
 

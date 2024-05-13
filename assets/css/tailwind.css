@@ -3,23 +3,29 @@
 @tailwind utilities;
 
 h1 {
-    @apply font-['New_Spirit'] text-[#F0B9AC] text-4xl mt-10
+    @apply font-['New_Spirit'] text-[#F0B9AC] text-2xl sm:text-4xl mt-10
 }
-p {
-    @apply font-['New_Spirit'] text-[#F0B9AC]  
+h2 {
+    @apply font-['New_Spirit'] text-[#F0B9AC]  text-xl sm:text-2xl mx-auto sm:mx-0
 }
+ p {
+    @apply font-['New_Spirit'] font-thin
+} 
 
 @layer components {
     .btn {
-        @apply bg-[#213890] text-white px-3 py-2 rounded-md text-sm w-64 mx-auto
+        @apply  text-black font-['New_Spirit']    px-3 py-2 rounded-md text-sm w-32 mx-auto border-2 border-[#F0B9AC] bg-[#fefaf977]
     }
     .card {
-        @apply p-3  rounded-md bg-white shadow-md md:h-full 
+        @apply py-3 w-64  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
+    }
+    .best-card {
+        @apply py-3  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
     }
     .explore-card {
-       @apply h-48 w-48 lg:h-64 lg:w-64 mx-10 my-5 bg-gray-700 border-2 border-[#F0B9AC] shadow-md rounded-lg flex justify-center items-center 
+       @apply  h-40 min-w-40 sm:h-48 sm:min-w-48 lg:h-64 lg:min-w-64  mx-2 md:mx-10 my-2 md:my-5 bg-gray-700 border-2 border-[#F0B9AC] shadow-md rounded-lg flex justify-center items-center 
     }
     .explore-card-text {
-        @apply text-3xl text-[#fefaf9] mx-5 text-center font-['New_Spirit']
+        @apply  text-xl sm:text-3xl text-[#fefaf9] mx-5 text-center font-['New_Spirit']
      }
 }
