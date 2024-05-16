@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full z-10">
+  <div class="fixed w-full z-40">
     <Navbar/>
   </div>
   <div class="container-fluid">
