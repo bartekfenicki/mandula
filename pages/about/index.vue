@@ -10,7 +10,7 @@
 </div>
 
  </div>
- <div class="w-screen h-[10vh] sm:h-[20vh] flex flex-col justify-evenly items-center">
+ <div class="w-screen h-[10vh] sm:h-[30vh] flex flex-col justify-evenly items-center">
     <div class="w-2/5 sm:w-1/5 flex justify-center items-center">
       <img class="flower-shadow" src="../../assets/images/mandula_flower.png" alt="flower">
     </div>
@@ -22,8 +22,8 @@
   <div class="w-screen h-auto md:h-[140vh] flex flex-col justify-evenly items-center">
     <div class="w-4/5 h-full flex flex-col md:flex-row-reverse justify-evenly items-center">
       <div class="w-full md:w-[45%] flex flex-col justify-evenly items-center gap-4 mb-10 md:mb-0">
-        <p class="text text-[#191514] text-xl sm:text-xs md:text-2xl lg:text-3xl mt-10">Even when I was a small child, I definitely knew what I wanted to do. Next to my father, perched on the kitchen counter, I announced that I was going to be a confectioner.</p>
-        <p class="text text-[#191514] text-xl sm:text-xs md:text-2xl lg:text-3xl mt-10">Since completing my profession, I have been continuously improving my knowledge and the time has come to dazzle my customers with it.</p>
+        <p class="text text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10">Even when I was a small child, I definitely knew what I wanted to do. Next to my father, perched on the kitchen counter, I announced that I was going to be a confectioner.</p>
+        <p class="text text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10">Since completing my profession, I have been continuously improving my knowledge and the time has come to dazzle my customers with it.</p>
       </div>
       <div class="w-full md:w-2/5 flex justify-center items-center">
         <img src="../../assets/images/About1.png" alt="About">
@@ -31,8 +31,8 @@
     </div>
     <div class="w-4/5 h-auto md:h-full flex flex-col md:flex-row justify-evenly items-center mt-10 md:mt-0">
       <div class="w-full md:w-[45%] flex flex-col justify-evenly items-center gap-4 mb-10 md:mb-0">
-        <p class="text text-[#191514] text-xl sm:text-xs md:text-2xl lg:text-3xl mt-10">Taking into account that many people suffer from various food intolerances and follow a vegan lifestyle, I dreamed up Mandula, not forgetting the lovers of traditional flavors.</p>
-        <p class="text text-[#191514] text-xl sm:text-xs md:text-2xl lg:text-3xl mt-10">You can choose from both sweet and savory cakes, choosing different alternatives. Every single dessert is made with love and dedication in my workshop, so I hope that eating it will bring you lots of joy and smiles.</p>
+        <p class="text text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10">Taking into account that many people suffer from various food intolerances and follow a vegan lifestyle, I dreamed up Mandula, not forgetting the lovers of traditional flavors.</p>
+        <p class="text text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10">You can choose from both sweet and savory cakes, choosing different alternatives. Every single dessert is made with love and dedication in my workshop, so I hope that eating it will bring you lots of joy and smiles.</p>
       </div>
       <div class="w-full md:w-2/5 flex justify-center items-center">
         <img src="../../assets/images/About2.png" alt="Aboutimg">

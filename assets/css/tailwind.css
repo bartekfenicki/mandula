@@ -22,7 +22,7 @@ h2{
 } 
 
 p{
-    @apply font-['Comfortaa'] text-[#191514] text-2xl sm:text-xs md:text-2xl lg:text-3xl mt-10
+    @apply font-['Comfortaa'] text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10
 
 }
 
