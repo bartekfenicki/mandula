@@ -2,6 +2,9 @@
   <div>
     <ProductDetails :product="product" />
   </div>
+  
+
+
 </template>
 
  <script setup>
@@ -22,5 +25,6 @@ definePageMeta({
 
     
 <style scoped>
+
     
 </style>
