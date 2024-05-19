@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default defineEventHandler(async ({ page = 2 }) => {
+export default defineEventHandler(async ({ page = 3 }) => {
   try {
     const {ConsumerKey} = useRuntimeConfig()
     const {ConsumerSecret} = useRuntimeConfig()

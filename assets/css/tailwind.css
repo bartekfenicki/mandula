@@ -68,5 +68,12 @@ h2 {
         @apply font-['New_Spirit'] text-[#191514] text-xs sm:text-xs md:text-xl lg:text-2xl mt-10
     }
     
+    .fill-pink {
+        @apply bg-[#F0B9AC] 
+    }
+
+    .fill-white {
+        @apply bg-[#FEFAF9] 
+    }
 
 }
