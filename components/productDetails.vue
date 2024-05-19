@@ -151,9 +151,12 @@
     </div>
 </div>
 
-    <div class="flex justify-between items-center">
-        <p class="p-product-black">Box:</p>
-        <p class="p-product-black">+ 500 HUF</p>
+    <div class="flex justify-between items-center mt-10">
+        <div class="flex flex-row items-center">
+        <input type="checkbox" class="focus:ring-0 before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border  checked:border-white-500 checked:fill-pink checked:before:fill-pink hover:before:opacity-10">
+        <p class="p-product-black mt-0 ml-6">Box:</p>
+    </div>
+        <p class="p-product-black m-0">+ 500 HUF</p>
     </div>
     <div class="flex justify-between items-center ">
         <p class="p-product-black ">Sub-total:</p>
@@ -177,9 +180,9 @@
 <script setup>
 
 const {product} = defineProps(['product'])
-console.log(product.attributes)
+console.log(product)
 
-const showMenu = ref(false)
+const showMenu = ref(true)
 const showMenuTwo = ref(false)
 const showMenuThree = ref(false)
 
