@@ -19,7 +19,7 @@
 <script setup>
 
 const {data: heroImages} = await useFetch('https://hanacoric.com/wp-json/wp/v2/hero-image');
-console.log(heroImages)
+
 
 
 let slideIndex = 0;

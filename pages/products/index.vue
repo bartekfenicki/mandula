@@ -1,67 +1,114 @@
 <template>
-  <h2 class="title">
-      Products
-    </h2>
+  <div class="mt-32">
     
-<div class="relative w-full max-w-xs mx-auto flex mt-10 mb-20">
-    <input
-      v-model="filter"
-      type="text"
-      class="peer w-full h-12 inline-flex items-center pl-12 pr-4 rounded-xl border border-slate-300 text-slate-700 placeholder:text-slate-300 font-sans leading-snug outline-none"
-      placeholder="Search"
-    />
-  </div>
+    <h1 class="title">Products</h1>
 
-  
+<ProductsFilters 
+      :category="category" 
+      :filter="filter" 
+      @update:category="updateCategory" 
+      @update:filter="updateFilter"
+      @pageChange="pageChange" 
+    />
 
     <div v-if="products">
-      <div class="sm:grid lg:grid-cols-3 sm:grid-cols-2">
-          <div class="w-full flex justify-center my-5 mx-auto" v-for="product in sortedProducts" :key="product.name">
-            <ProductCard :product="product"/>
-          </div>
+      <div class="sm:grid lg:grid-cols-3 md:grid-cols-2 ms-auto md:ms-64">
+        <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
+          <ProductsProductCard :product="product"/>
         </div>
+      </div>
     </div>
     <div v-else>
       <p>Loading...</p>
     </div>
-    </template>
+
+    
+    <div class="pagination mb-16">
+      <button class="font-['New_Spirit']" @click="prevPage" :disabled="currentPage === 1"><<</button>
+      <span class="font-['New_Spirit'] mx-5 text-[#F0B9AC]">{{ currentPage }}</span>
+      <button class="font-['New_Spirit']" @click="nextPage" :disabled="currentPage === 5">>></button>
+    </div>
+  </div>
+</template> 
+
 <script setup lang="ts">
-//onmounted
-const { data: products} = await useFetch('/api/data');
+
+
+const category = ref("")
+const tag = ref("")
+const filter = ref("");
+const itemsPerPage = 12;
+
+
+const updateCategory = (newCategory: string) => {
+  category.value = newCategory;
+  currentPage.value = 1
+};
+
+
+const updateFilter = (newFilter: string) => {
+  filter.value = newFilter;
+};
+
+// modulus + length
+
+// Current page properties
+const currentPage = ref<number>(1);
+watch(currentPage, (newPage) => {
+  if (process.client) {
+    localStorage.setItem('currentPage', newPage.toString());
+  }
+});
+onMounted(() => {
+  const savedPage = parseInt(localStorage.getItem('currentPage') || '1');
+  if (savedPage) {
+    currentPage.value = savedPage;
+  }
+});
+
+// Fetch products data
+const { data: products } = useFetch('/api/data', {
+  query: { currentPage, filter, itemsPerPage, category, tag }
+});
+
 console.log(products)
 
-const page = ref(1)
+// Methods to change page
+const nextPage = () => {
+  if(currentPage.value < 5){
+    currentPage.value++;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
 
+const prevPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
 
+const pageChange = () => {
+  currentPage.value = 1
+  if (category.value != "" ) {
+    category.value = ""
+  }
+}
+
+// layout
 definePageMeta({
             layout: 'products'
         })
+</script>  
 
-
-const filter = ref("");
-
-const filteredProducts = computed(() => {
-  if (!filter.value) {
-    return products.value
-  }
-
-  const filterRe = new RegExp(filter.value, 'i')
-  return products.value.filter((product: { name: any; id: any; tag: { slug: any; }; categories: { name: any; }; }) => {
-    return [product.name, product.id, product.tag?.slug, product.categories?.name].some((prop) =>
-    String(prop).match(filterRe)
-    )
-  })
-})
-const sortedProducts = computed(() => {
-  return filteredProducts.value.sort((a: { name: string; }, b: { name: any; }) => {
-    return a.name.localeCompare(b.name)
-  })
-
-})
-
-
-</script>
-    
-<style scoped>
-    
+ <style scoped>
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination button {
+  margin: 0 5px;
+}
 </style>

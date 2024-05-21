@@ -14,10 +14,10 @@ h2 {
 
 @layer components {
     .btn {
-        @apply  text-black font-['New_Spirit']    px-3 py-2 rounded-md text-sm w-32 mx-auto border-2 border-[#F0B9AC] bg-[#fefaf977]
+        @apply  text-black font-['New_Spirit']    px-3 py-2 rounded-md text-sm w-32 mx-auto border-2 border-[#0d0d0d] bg-[#fefaf977] hover:bg-[#F0B9AC] hover:text-[#fefaf9]
     }
     .card {
-        @apply py-3 w-64  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
+        @apply py-2  w-screen md:w-56 lg:w-64  rounded-md  shadow-xl md:h-full flex md:flex-col flex-row items-center justify-between border-2 border-[#7E1D3C] bg-[#fefaf977]
     }
     .best-card {
         @apply py-3  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]

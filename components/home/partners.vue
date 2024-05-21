@@ -20,7 +20,7 @@
 
 <script setup>
 const {data: partners} = await useFetch('https://hanacoric.com/wp-json/wp/v2/partner');
-console.log(partners)
+
 
 let animationPaused = false;
 
