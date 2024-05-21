@@ -1,22 +1,4 @@
 <template>
-  <!-- <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
-     <div class="my-16" v-for="bestseller in displayedBestsellers">
-      <div class="best-card text-center">
-        <img :src="bestseller.acf.image.url" alt="image" class="thumb">
-        <div class="flex w-64 mx-auto justify-between items-center">
-          <h2 class="m-2"> {{ bestseller.title.rendered }}</h2>
-          <p class="m-2">{{ bestseller.acf.price }} HUF</p>
-        </div>
-        <button class="btn ">Select</button>
-      </div>
-    </div> 
-  </div>
-  <div class="pagination mb-10">
-      <button class="font-['New_Spirit']" @click="prevPage" :class="{ 'disabled': currentPage === 1 }"><<</button>
-      <span class="mx-5 font-['New_Spirit'] text-[#F0B9AC]">{{ currentPage }}</span>
-      <button class="font-['New_Spirit']" @click="nextPage" :class="{ 'disabled': currentPage === totalPages }">>></button>
-    </div> -->
-
     <div v-if="products">
       <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
         <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
