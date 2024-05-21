@@ -72,6 +72,24 @@ onMounted(() => {
 
 </script>
 
+<script>
+export default {
+    mounted() {
+        const toggleMenuButton = document.getElementById('toggleMenu');
+        const navLinks = document.querySelectorAll('nav .text-block');
+
+        toggleMenuButton.addEventListener('click', function() {
+            navLinks.forEach(function(link, index) {
+                setTimeout(() => {
+                    link.classList.toggle('hidden');
+                    link.classList.toggle('flex');
+                    link.style.animation = link.classList.contains('hidden') ? '' : 'slideIn 0.01s ease-in-out forwards';
+                }, index * 100);
+            });
+        });
+    }
+}
+</script>
 
 
 <style scoped>
