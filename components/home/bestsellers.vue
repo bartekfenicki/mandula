@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
+  <!-- <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
      <div class="my-16" v-for="bestseller in displayedBestsellers">
       <div class="best-card text-center">
         <img :src="bestseller.acf.image.url" alt="image" class="thumb">
@@ -15,49 +15,57 @@
       <button class="font-['New_Spirit']" @click="prevPage" :class="{ 'disabled': currentPage === 1 }"><<</button>
       <span class="mx-5 font-['New_Spirit'] text-[#F0B9AC]">{{ currentPage }}</span>
       <button class="font-['New_Spirit']" @click="nextPage" :class="{ 'disabled': currentPage === totalPages }">>></button>
+    </div> -->
+
+    <div v-if="products">
+      <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
+        <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
+          <ProductsProductCard :product="product"/>
+        </div>
+      </div>
+    </div>
+    <div v-else>
+      <p>Loading...</p>
+    </div>
+    <div class="pagination mb-10">
+      <button class="font-['New_Spirit']" @click="prevPage" :class="{ 'disabled': currentPage === 1 }"><<</button>
+      <span class="mx-5 font-['New_Spirit'] text-[#F0B9AC]">{{ currentPage }}</span>
+      <button class="font-['New_Spirit']" @click="nextPage" :class="{ 'disabled': currentPage === 2 }">>></button>
     </div>
 
 </template>
 
-<script setup>
-// const {data: bestsellers, pending, refresh} = await useFetch(`https://hanacoric.com/wp-json/wp/v2/bestseller?per_page=3`);
-// console.log(bestsellers)
+<script setup lang="ts">
 
+const category = ref("62")
+const tag = ref("")
+const filter = ref("");
 const itemsPerPage = 3;
+const currentPage = ref<number>(1);
+watch(currentPage, (newPage) => {
+  if (process.client) {
+    localStorage.setItem('currentPage', newPage.toString());
+  }
+});
 
-const currentPage = ref(1);
-const totalItems = ref(0);
-const totalPages = ref(0);
+const { data: products } = useFetch('/api/data', {
+  query: { currentPage, filter, itemsPerPage, category, tag }
+});
+console.log(products)
 
-let bestsellersData = [];
-const displayedBestsellers = ref([]);
-
-const fetchBestsellers = async () => {
-  const response = await fetch(`https://hanacoric.com/wp-json/wp/v2/bestseller?per_page=${itemsPerPage}&page=${currentPage.value}`);
-  const data = await response.json();
-
-  totalItems.value = parseInt(response.headers.get('X-WP-Total'));
-  totalPages.value = parseInt(response.headers.get('X-WP-TotalPages'));
-
-  bestsellersData = data || [];
-  displayedBestsellers.value = bestsellersData;
-};
 
 const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
+  if(currentPage.value < 5){
     currentPage.value++;
-    fetchBestsellers();
   }
 };
 
 const prevPage = () => {
   if (currentPage.value > 1) {
     currentPage.value--;
-    fetchBestsellers();
   }
 };
 
-fetchBestsellers();
 </script>
 
 <style scoped>

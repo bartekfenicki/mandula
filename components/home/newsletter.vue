@@ -14,8 +14,9 @@
     </div>
 </template>
 
-<script lang="ts" setup>
-
+<script  setup>
+const {data: newsletter} = await useFetch('https://hanacoric.com/wp-json/wp/contact-form-7/v1/contact-forms/bb02cd5')
+console.log(newsletter)
 </script>
 
 <style>

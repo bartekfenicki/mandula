@@ -4,21 +4,23 @@
     </div>
     <div class="container-fluid flex flex-col justify-center items-center">
         <h1> Best Sellers </h1>
-        <Bestsellers/>
+        <HomeBestsellers/>
     </div>
     <div class="container-fluid">
-        <exploreTabs/>
+        <HomeExploreTabs/>
     </div>
-    <div>
-        <newsletter/>
+    <div class="container-fluid">
+        <HomeNewsletter/>
     </div>
     <div class="container-fluid flex flex-col justify-center items-center">
         <h1 class="mb-10"> Our Partners </h1>
-        <Partners/>
+        <HomePartners/>
     </div>
     </template>
     
     <script setup>
+
+
    
     </script>
 

@@ -5,6 +5,7 @@
     <p>{{ product.price }}</p>
     <div v-html="product.description"></div>
     <div v-html="product.short_description"></div> 
+    <button class="btn" @click="addToCart(product)"> Add to Cart </button>
   </div>
   <div v-else>
     <p>Loading...</p>
@@ -15,9 +16,12 @@
 <script setup>
 const {product} = defineProps(['product'])
 
+const cartItems = ref([]);
 
-
-
+const addToCart = (product) => {
+  cartItems.value.push(product);
+};
+console.log(cartItems)
 </script>
 
 <style>

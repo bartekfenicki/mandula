@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed w-full z-10">
+  <div class="fixed w-full z-40">
     <Navbar/>
   </div>
-  <div class="container-fluid">
+  <div class="container-fluid z-0">
     <HeroImg/>
     <button @click="scrollToSection" class="scroll-button animate-bounce -mt-16 flex flex-col items-center mx-auto">
       <p class="text-[#FDF1EE]">See More</p>

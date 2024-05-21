@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ProductDetails :product="product" />
+  <div class="mt-20">
+    <ProductsProductDetails :product="product" />
   </div>
 </template>
 
