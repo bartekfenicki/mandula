@@ -28,7 +28,6 @@
 <script setup lang="ts">
 //onmounted
 const { data: products} = await useFetch('/api/data');
-console.log(products)
 
 const page = ref(1)
 
