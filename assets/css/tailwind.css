@@ -22,7 +22,7 @@ h2 {
     }
 
     .btn-product {
-        @apply  text-[#191514] font-['New_Spirit']  px-3 py-2 rounded-md text-sm w-[110px] mx-auto border-2 border-[#191514] bg-[#FEFAF9]
+        @apply  text-[#191514] font-['New_Spirit']  px-3 py-2 rounded-md sm:text-sm sm:w-[110px] md:text-xl md:w-[200px] mx-auto border-2 border-[#191514] bg-[#FEFAF9]
     }
 
         .card {
@@ -42,7 +42,7 @@ h2 {
         @apply font-['New_Spirit'] text-[#FEFAF9] text-4xl sm:text-4xl md:text-6xl lg:text-8xl mt-10 
      }
          .h2-brown{
-        @apply font-['New_Spirit'] text-[#A64817] text-3xl sm:text-4xl md:text-5xl lg:text-7xl mx-auto
+        @apply font-['New_Spirit'] text-[#A64817] text-3xl sm:text-3xl md:text-4xl lg:text-7xl mx-auto
     
     }
 
@@ -56,8 +56,12 @@ h2 {
         @apply font-['New_Spirit'] text-[#F0B9AC] text-xl sm:text-xl md:text-2xl lg:text-4xl mt-10
     }
 
+    .p-white {
+        @apply font-['Comfortaa'] text-[#FEFAF9] text-xs sm:text-xs md:text-2xl lg:text-3xl 
+    }
+
     .p-black{
-        @apply font-['Comfortaa'] text-[#191514] text-xl sm:text-xs md:text-xl lg:text-2xl mt-10
+        @apply font-['Comfortaa'] text-[#191514] text-xs sm:text-xs md:text-sm lg:text-2xl mt-10
     
     }
 
@@ -70,7 +74,7 @@ h2 {
     }
 
     .p-product-black {
-        @apply font-['New_Spirit'] text-[#191514] text-xs sm:text-xl md:text-xl lg:text-2xl mt-10
+        @apply font-['New_Spirit'] text-[#191514] text-xs sm:text-xl md:text-2xl lg:text-3xl mt-10
     }
     
     .fill-pink {

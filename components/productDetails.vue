@@ -1,6 +1,6 @@
 <template>
   <div v-if="product" class="w-full h-max">
-    <div class="w-full flex flex-row lg:justify-start justify-center">
+    <div class="w-full h-full flex flex-row lg:justify-start justify-center">
       <h1 class="lg:h2-pink mb-10 lg:ml-[160px] h2-brown">
         {{ product.name }}
       </h1>
@@ -12,7 +12,7 @@
           <img
             :src="product.images[0].src"
             alt="Product Image"
-            class="lg:w-[488px] lg:h-[488px] sm:w-[188px] sm:h-[188px] rounded-lg border-2"
+            class="lg:w-[488px] lg:h-[488px] sm:w-[188px] sm:h-[188px] md:w-[388px] md:h-[388px] rounded-lg border-2"
             style="border-color: #f0b9ac"
           />
           <div class="text-left flex justify-center items-center flex-col">
@@ -56,8 +56,11 @@
               class="ml-[40px] flex flex-col justify-center items-start"
               v-if="showMenu"
             >
-              <div class="flex flex-col justify-center">
-                <label class="flex items-center" v-for="item in smallMenu">
+              <div class="flex flex-col justify-center w-full">
+                <label
+                  class="w-full flex items-center justify-between"
+                  v-for="item in smallMenu"
+                >
                   <label
                     class="relative flex items-center p-3 rounded-full cursor-pointer"
                     htmlFor="fill-pink"
@@ -76,7 +79,7 @@
                     >
                   </label>
                   <p
-                    class="p-product-black mt-0"
+                    class="p-product mt-0"
                     v-if="splitName(item.name)[1] !== 'Traditional'"
                   >
                     + {{ item.regular_price - smallMenu[0].regular_price }}
@@ -116,8 +119,11 @@
             class="ml-[40px] flex flex-col justify-center items-start"
             v-if="showMenuTwo"
           >
-            <div class="flex flex-col justify-center">
-              <label class="flex items-center" v-for="item in mediumMenu">
+            <div class="w-full flex flex-col justify-center">
+              <label
+                class="w-full flex items-center justify-between"
+                v-for="item in mediumMenu"
+              >
                 <label
                   class="relative flex items-center p-3 rounded-full cursor-pointer"
                   htmlFor="fill-pink"
@@ -136,7 +142,7 @@
                   >
                 </label>
                 <p
-                  class="p-product-black mt-0"
+                  class="p-product mt-0"
                   v-if="splitName(item.name)[1] !== 'Traditional'"
                 >
                   + {{ item.regular_price - mediumMenu[0].regular_price }}
@@ -175,8 +181,11 @@
             class="ml-[40px] flex flex-col justify-center items-start"
             v-if="showMenuThree"
           >
-            <div class="flex flex-col justify-center">
-              <label class="flex items-center" v-for="item in largeMenu">
+            <div class="w-full flex flex-col justify-center">
+              <label
+                class="w-full flex items-center justify-between"
+                v-for="item in largeMenu"
+              >
                 <label
                   class="relative flex items-center p-3 rounded-full cursor-pointer"
                   htmlFor="fill-pink"
@@ -195,7 +204,7 @@
                   >
                 </label>
                 <p
-                  class="p-product-black mt-0"
+                  class="p-product mt-0"
                   v-if="splitName(item.name)[1] !== 'Traditional'"
                 >
                   + {{ item.regular_price - largeMenu[0].regular_price }}
@@ -214,10 +223,10 @@
             <div class="flex flex-row items-center">
               <p class="p-product-black mt-0 ml-6">Box:</p>
             </div>
-            <p class="p-product-black m-0">+ 500 HUF</p>
+            <p class="p-product-black m-0 font-bold">+ 500 HUF</p>
           </div>
           <div class="flex justify-between items-center">
-            <p class="p-product-black">Sub-total:</p>
+            <p class="p-product-black ml-6">Sub-total:</p>
             <p class="p-product-black font-bold" id="subtotal">0</p>
           </div>
           <div class="flex justify-center">
@@ -237,17 +246,29 @@
       class="w-full h-fit flex flex-col justify-center items-center lg:hidden"
     >
       <div class="w-full flex flex-col justify-center items-center">
-        <div class="w-full flex justify-start mt-10">
-          <p class="w-fit h-[50px] h2-brown lg:hidden flex m-0">Slices:</p>
-        </div>
-        <div class="w-fit flex flex-row justify-center space-x-4 items-center">
-          <button class="btn-product hover-pink">8</button>
-          <button class="btn-product hover-pink">14</button>
-          <button class="btn-product hover-pink">20</button>
+        <div class="w-fit flex flex-col justify-center items-center">
+          <div class="w-full flex justify-start mt-10">
+            <p
+              class="w-fit h-[50px] h2-brown lg:hidden flex m-0 md:w-full md:flex md:h-[80px] md:justify-center md:items-center"
+            >
+              Slices:
+            </p>
+          </div>
+          <div
+            class="w-fit flex flex-row justify-center space-x-4 items-center"
+          >
+            <button class="btn-product hover-pink w-[100px]">8</button>
+            <button class="btn-product hover-pink w-[100px]">14</button>
+            <button class="btn-product hover-pink w-[100px]">20</button>
+          </div>
         </div>
         <div class="w-fit flex flex-col justify-center items-center">
           <div class="w-full flex justify-start mt-10">
-            <p class="h-[50px] h2-brown lg:hidden flex m-0">Style:</p>
+            <p
+              class="w-fit h-[50px] h2-brown lg:hidden flex m-0 md:w-full md:flex md:h-[80px] md:justify-center md:items-center"
+            >
+              Style:
+            </p>
           </div>
           <div
             class="w-fit flex flex-row justify-center space-x-4 items-center"
@@ -261,24 +282,26 @@
       <div class="w-full flex flex-col justify-between mt-10">
         <div class="flex flex-row justify-evenly space-x-20">
           <div class="flex flex-row">
-            <p class="text-[#191514] font-['New_Spirit'] text-xl mt-0 ml-3">
+            <p
+              class="text-[#191514] font-['New_Spirit'] text-xl mt-0 ml-3 md:text-2xl md:mr-12"
+            >
               Box:
             </p>
           </div>
           <p
-            class="text-[#191514] font-['New_Spirit'] text-xl m-0 flex flex-row"
+            class="text-[#191514] font-['New_Spirit'] text-xl font-bold m-0 flex flex-row md:text-2xl"
           >
             + 500 HUF
           </p>
         </div>
         <div class="flex flex-row justify-evenly space-x-20 mt-5">
           <p
-            class="text-[#191514] font-['New_Spirit'] text-xl mt-0 ml-3 font-bold"
+            class="text-[#191514] font-['New_Spirit'] text-xl mt-0 ml-3 md:text-2xl md:ml-5"
           >
             Sub-total:
           </p>
           <p
-            class="text-[#191514] font-['New_Spirit'] text-xl m-0 flex flex-row"
+            class="text-[#191514] font-['New_Spirit'] text-xl m-0 flex flex-row font-bold md:text-2xl md:ml-5"
           >
             8 250 HUF
           </p>
@@ -297,8 +320,10 @@
         <div class="w-full flex justify-center mt-10">
           <p class="w-fit h-[50px] h2-brown lg:hidden flex m-0">Ingredients:</p>
         </div>
-        <div class="w-fit flex flex-row justify-center space-x-4 items-center">
-          <p class="text-lg m-0 p-product-black">
+        <div
+          class="w-fit flex flex-row justify-center space-x-4 items-center md:w-full"
+        >
+          <p class="text-lg m-0 p-black md:w-[75vw]">
             <a href="#" class="underline">flour</a> -
             <a href="#" class="underline">egg</a> - sugar -
             <a href="#" class="underline">almond flour</a> - margarine - sugar -
@@ -315,7 +340,11 @@
         </div>
         <div
           v-html="product.short_description"
-          class="description-wrapper-mobile w-[75%] m-0 lg:hidden"
+          class="description-wrapper-mobile w-[50%] m-0 lg:hidden"
+        ></div>
+        <div
+          v-html="product.short_description"
+          class="description-wrapper-md hidden w-[75%] flex-row justify-center items-center m-0"
         ></div>
       </div>
     </div>
@@ -352,10 +381,6 @@ smallMenu.reverse();
 mediumMenu.reverse();
 largeMenu.reverse();
 
-const setDescrption = (description) => {
-  document.getElementById("ingredients").innerHTML = description;
-};
-
 const ToggleMenu = (id) => {
   if (id === 1) {
     showMenuTwo.value = false;
@@ -382,7 +407,7 @@ const calculateSubtotal = (variationValue) => {
 </script>
 
 <style>
-/*The dinamically added data using v-html caused 
+/*The dynamically added data using v-html caused 
 the description p tag to be unreachable by tailwind so we have to use some basic css to reach it*/
 .short-description-wrapper p {
   color: hsl(12, 11%, 9%);
@@ -397,10 +422,19 @@ the description p tag to be unreachable by tailwind so we have to use some basic
   width: 95vw;
 }
 
+.description-wrapper-md p {
+  color: hsl(12, 11%, 9%);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+  width: 85vw;
+}
+
 .ingredients p {
   color: hsl(12, 11%, 9%);
   font-size: 1rem;
   margin-top: 0;
   font-weight: bold;
+  width: 65vw;
 }
 </style>
