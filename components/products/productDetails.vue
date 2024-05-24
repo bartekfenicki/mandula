@@ -403,7 +403,7 @@ const { addToCart } = useCart();
 
 <script setup>
 const { product, variations } = defineProps(["product", "variations"]);
-console.log(variations);
+console.log(product, variations);
 
 const smallMenu = [];
 const mediumMenu = [];

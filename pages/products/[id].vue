@@ -1,6 +1,6 @@
 <template>
   <div class="mt-20">
-    <ProductsProductDetails :product="product" />
+    <ProductsProductDetails :product="product" :variations="variation" />
   </div>
 </template>
 
@@ -10,7 +10,9 @@
 
 const route = useRoute();
 
-const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
+const { data: product } = useFetch(`/api/dataID/${route.params.id}`);
+
+const { data: variation } = useFetch(`/api/variations/${route.params.id}/variations`  );
 
 console.log(product)
 
