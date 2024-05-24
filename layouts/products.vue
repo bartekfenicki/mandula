@@ -1,6 +1,6 @@
 <template>
   <div class="z-50 fixed w-full">
-    <Navbar/>
+    <Navbar />
   </div>
   
     <div class="mx-auto p-4 z-0">

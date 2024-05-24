@@ -47,6 +47,15 @@ const tag = ref("")
 const filter = ref("");
 const itemsPerPage = 12;
 
+const route = useRoute();
+
+// Initialize category from query parameters on component mount
+onMounted(() => {
+  if (route.query.category) {
+    category.value = route.query.category as string;
+  }
+});
+
 
 const updateCategory = (newCategory: string) => {
   category.value = newCategory;

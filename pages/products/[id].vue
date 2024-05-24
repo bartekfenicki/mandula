@@ -14,6 +14,8 @@ const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
 
 console.log(product)
 
+
+
 definePageMeta({
   layout: 'products'
 });

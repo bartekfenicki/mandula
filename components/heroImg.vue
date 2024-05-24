@@ -9,8 +9,10 @@
       </div>
       <div class="absolute left-1/2 top-1/2 md:top-2/3 md:left-1/4 transform -translate-x-1/2 -translate-y-1/2">
         <h1 class="text-[#FDF1EE] text-3xl md:text-4xl lg:text-6xl font-bold mb-4">Contact for <br> Custom Orders</h1>
-        <button class="rounded-lg border-2 border-[#FDF1EE] px-5 py-2 ms-2 md:ms-0 md:px-10 md:py-5 text-[#FDF1EE] font-['New_Spirit']">Contact</button>
-    </div>
+        <NuxtLink class="" to="/contact"> 
+          <button class="rounded-lg border-2 border-[#FDF1EE] px-5 py-2 ms-2 md:ms-0 md:px-10 md:py-5 text-[#FDF1EE] font-['New_Spirit']">Contact</button>
+        </NuxtLink>
+         </div>
   </div>
 
 
