@@ -1,6 +1,9 @@
 <template>
-  <Navbar/>
-    <div class="mx-auto p-4 ">
+  <div class="z-50 fixed w-full">
+    <Navbar />
+  </div>
+  
+    <div class="mx-auto p-4 z-0">
       <slot />
     </div>
   <bottomNav/>

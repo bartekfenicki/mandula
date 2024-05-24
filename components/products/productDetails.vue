@@ -356,8 +356,10 @@
 </template>
 
 <script setup>
+
 const { product, variations } = defineProps(["product", "variations"]);
-console.log(variations);
+console.log('Product:', product);
+console.log('Variations:', variations);
 
 const smallMenu = [];
 const mediumMenu = [];

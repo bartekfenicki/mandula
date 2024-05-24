@@ -27,7 +27,10 @@
                 </div>
                 <div class="text-center justify-end sm:justify-center me-5 sm:me-auto  hidden sm:flex text-block">
                     <button class="" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                        <img class="w-6 h-6" src="/assets/icons/shopping-cart.png"/>
+                        <img class="relative w-6 h-6 " src="/assets/icons/shopping-cart.png"/>
+                        <div class=" absolute top-7 ms-4  bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                            {{ cartItems.length }}
+                        </div>
                     </button>
                 </div>
                 </div>
@@ -36,30 +39,37 @@
     </header>
 
 <!-- drawer component -->
-<div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
-    <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Cart</h5>
+<div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-[#FDF1EE] dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+    <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+        <img src="/assets/logos/redbrown.svg" alt="Item Image" class="w-16 h-16 object-cover">
+    </h5>
     <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
         <span class="sr-only">Close menu</span>
     </button>
-  <div class="py-4 overflow-y-auto">
-      <ul class="space-y-2 font-medium">
-         <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                  <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
-               </svg>
-               <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
-            </a>
-         </li>
-         <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                  <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
-               </svg>
-               <NuxtLink class="text-[#FDF1EE] hover:text-[#fefaf9]" to="/checkout">Checkout</NuxtLink>
-            </a>
-         </li>
+  <div class="py-4  overflow-y-auto">
+    <ul class="space-y-2 font-medium mt-4">
+        <li class="flex justify-between">
+            <p>Total:</p>
+            <p>{{ total }} HUF</p>
+        </li>
+        <li v-for="(item, index) in cartItems" :key="index" class="flex items-center justify-between">
+            <div class="flex items-center">
+                <img :src="item.images[0].src" alt="Item Image" class="w-8 h-8 object-cover">
+                <div class="ml-4">
+                    <p class="text-sm">{{ item.name }}</p>
+                    <p class="text-sm">{{ item.price }} HUF</p>
+                </div>
+            </div>
+            <button @click="removeFromCart(index)" class="text-red-500 hover:text-red-700">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+        </li>
+        <li class="flex items-center justify-center">
+          <button class=" btn absolute bottom-10" type="button" data-drawer-target="drawer-navigation" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">
+            <NuxtLink to="/checkout">Checkout</NuxtLink>
+          </button>
+        </li>
       </ul>
    </div>
 </div>
@@ -67,11 +77,17 @@
 </template>
 <script setup>
 import { initFlowbite } from 'flowbite'
-
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
+
 })
+
+
+const { cartItems, removeFromCart, total } = useCart();
+
+
+
 </script>
 
 <script>
@@ -93,7 +109,11 @@ export default {
 }
 </script>
 
+
 <style scoped>
+body.drawer-open {
+    overflow: hidden;
+}
 .router-link-exact-active {
   color: #fefaf9;
 }
