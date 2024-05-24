@@ -35,6 +35,7 @@ export default defineEventHandler(async (event) => {
         password: `${Password}`
       }
     });
+
     return response.data;
   } catch (error) {
     console.error('Error fetching products:', error);
