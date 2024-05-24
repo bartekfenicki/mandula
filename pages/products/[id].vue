@@ -10,10 +10,9 @@
  <script setup>
 
 
-
 const route = useRoute();
 
-// const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
+ const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
 
 const { data: variations} = await useFetch(`/api/variations/${route.params.id}`);
 console.log(variations)
