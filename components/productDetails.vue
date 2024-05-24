@@ -276,12 +276,13 @@ const { addToCart } = useCart();
             <p class="p-product-black font-bold" id="subtotal">0</p>
           </div>
           <div class="flex justify-center">
-            <button
+            <!-- <button
               class="w-[200px] h-[50px] p-product-black text-lg font-bold py-2 rounded-lg"
               style="background-color: #f0b9ac"
             >
               Add to cart
-            </button>
+            </button> -->
+            <button class="btn" @click="addToCart(product)"> Add to Cart </button>
           </div>
         </div>
       </div>
@@ -402,8 +403,10 @@ const { addToCart } = useCart();
 </template>
 
 <script setup>
-const { product, variations } = defineProps(["product", "variations"]);
+const { product, variations } = defineProps(['product', 'variations']);
 console.log(product, variations);
+
+const { addToCart } = useCart();
 
 const smallMenu = [];
 const mediumMenu = [];
