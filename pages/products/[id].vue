@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProductDetails :product="product" :variations="variations"/>
+    <ProductsProductDetails :product="product" :variations="variations"/>
   </div>
   
 
@@ -13,9 +13,11 @@
 
 const route = useRoute();
 
-const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
+// const { data: product } = useFetch(`/api/dataID/${route.params.id}`  );
 
 const { data: variations} = await useFetch(`/api/variations/${route.params.id}`);
+console.log(variations)
+
 definePageMeta({
   layout: 'products'
 });

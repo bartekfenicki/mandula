@@ -231,9 +231,11 @@
           </div>
           <div class="flex justify-center">
             <button
-            class="w-[200px] h-[50px] p-product-black text-lg font-bold py-2 rounded-lg"
+              class="w-[200px] h-[50px] p-product-black text-lg font-bold py-2 rounded-lg"
               style="background-color: #f0b9ac"
-            @click="addToCart(product)"> Add to Cart </button>
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
@@ -356,15 +358,6 @@
 <script setup>
 const { product, variations } = defineProps(["product", "variations"]);
 console.log(variations);
-
-import { initFlowbite } from 'flowbite'
-// initialize components based on data attribute selectors
-onMounted(() => {
-    initFlowbite();
-
-})
-
-const { addToCart } = useCart();
 
 const smallMenu = [];
 const mediumMenu = [];
