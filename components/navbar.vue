@@ -28,7 +28,7 @@
                 <div class="text-center justify-end sm:justify-center me-5 sm:me-auto  hidden sm:flex text-block">
                     <button class="" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
                         <img class="relative w-6 h-6 " src="/assets/icons/shopping-cart.png"/>
-                        <div class=" absolute top-7 ms-4  bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        <div class=" absolute top-7 ms-4  bg-red-500 text-white rounded-full w-5 h-5 hidden sm:flex items-center justify-center text-xs">
                             {{ cartItems.length }}
                         </div>
                     </button>
@@ -66,9 +66,11 @@
             </button>
         </li>
         <li class="flex items-center justify-center">
-          <button class=" btn absolute bottom-10" type="button" data-drawer-target="drawer-navigation" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">
-            <NuxtLink to="/checkout">Checkout</NuxtLink>
-          </button>
+            <NuxtLink to="/checkout" class="items-center justify-center flex">
+                <button class=" btn absolute bottom-10" type="button" data-drawer-target="drawer-navigation" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">
+                    checkout
+                </button>
+            </NuxtLink>
         </li>
       </ul>
    </div>

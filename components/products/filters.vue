@@ -1,5 +1,5 @@
 <template>
-  <div class="filters-sidebar mt-5 relative md:fixed flex flex-col justify-center items-center border-[#7E1D3C] bg-[#fefaf977] shadow-2xl border-2 rounded-lg">
+  <div class="filters-sidebar mt-5 relative md:fixed flex w-72 mx-auto md:mx-0 flex-col justify-center items-center border-[#7E1D3C] bg-[#fefaf977] shadow-2xl border-2 rounded-lg">
     <div class="w-full max-w-xs mx-auto px-3 flex flex-col mt-3 mb-6">
       <input
         v-model="internalFilter"
@@ -10,7 +10,7 @@
         placeholder="Search"
       />
     </div>
-    <p class="ms-4 me-auto mb-2">categories:</p>
+    <p class="ms-4 me-auto mb-2 text-lg">categories:</p>
     <ul class="w-64 mx-3 mb-4 max-w-xs text-sm font-medium text-gray-900 bg-transparent border border-black rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <li class="w-full border-b border-black rounded-t-lg dark:border-gray-600">
         <div class="flex items-center ps-3">
@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
-// Define props
+// props
 const props = defineProps({
   category: {
     type: String,
@@ -76,6 +76,7 @@ watch(() => props.filter, (newFilter) => {
 const emitUpdateCategory = (event: Event) => {
   const target = event.target as HTMLInputElement;
   emits('update:category', target.value);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 const emitPageChange = () => {

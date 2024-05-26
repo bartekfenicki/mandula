@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full z-10">
+  <div class="w-full z-10 fixed">
     <Navbar/>
   </div>
 

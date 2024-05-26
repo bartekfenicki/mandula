@@ -1,9 +1,4 @@
 <template>
-  <!-- <div class="flex justify-between gap-5 py-5  px-5 lg:px-16 w-full overflow-x-auto border-y-2 border-[#F0B9AC] bg-[#b59a9422]">
-    <div  v-for="partner in partners">
-    <img class="h-16 min-w-28 border-2 rounded-lg border-black" :src="partner.acf.image.link" alt="image">
-  </div>
-  </div> -->
   <div class="partners-container overflow-x-auto" @mouseover="stopAnimation" @mouseleave="resumeAnimation">
     <div class="partners-wrapper">
       <div v-for="partner in partners" :key="partner.id" class="partner-item">
@@ -91,7 +86,20 @@ function resumeAnimation() {
     width: 500px;  
   }
   .partners-wrapper {
-    animation: scrollLeftRightMobile 10s linear infinite; /* Animation for smaller screens */
+    animation: scrollLeftRightPad 10s linear infinite; /* Animation for smaller screens */
+  }
+  .partner-item {
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 150px;
+}
+}
+@media screen and (max-width: 500px) {
+  .partners-container {
+    width: 100%;  
+  }
+  .partners-wrapper {
+    animation:  none; /* Animation for smaller screens */
   }
   .partner-item {
   margin-left: 0px;
@@ -108,14 +116,6 @@ function resumeAnimation() {
   }
 }
 
-@keyframes scrollLeftRightMobile {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-85%)); /* Adjust with padding-right */
-  }
-}
 .partners-container:hover .partners-wrapper {
   animation-play-state: paused;
 }

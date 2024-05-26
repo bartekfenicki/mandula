@@ -12,10 +12,15 @@
     />
 
     <div v-if="products">
-      <div class="sm:grid lg:grid-cols-3 md:grid-cols-2 ms-auto md:ms-64">
-        <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
+      <div v-if="products.length > 0" class=" flex flex-col  md:grid lg:grid-cols-3 md:grid-cols-2  md:ms-64">
+        <div class="w-full flex justify-center my-5 md:mx-5 mx-auto" v-for="product in products">
           <ProductsProductCard :product="product"/>
         </div>
+      </div>
+      <div v-else class="h-96  mt-5 md:ms-80">
+          <p>
+            No search matches...
+          </p> 
       </div>
     </div>
     <div v-else>
@@ -34,7 +39,7 @@
     <div class="pagination mb-16">
       <button class="font-['New_Spirit']" @click="prevPage" :disabled="currentPage === 1"><<</button>
       <span class="font-['New_Spirit'] mx-5 text-[#F0B9AC]">{{ currentPage }}</span>
-      <button class="font-['New_Spirit']" @click="nextPage" :disabled="currentPage === 5">>></button>
+      <button class="font-['New_Spirit']" @click="nextPage">>></button>
     </div>
   </div>
 </template> 
@@ -92,7 +97,7 @@ console.log(products)
 
 // Methods to change page
 const nextPage = () => {
-  if(currentPage.value < 5){
+  if(products.value.length > itemsPerPage - 1){
     currentPage.value++;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

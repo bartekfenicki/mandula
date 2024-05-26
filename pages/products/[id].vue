@@ -1,6 +1,6 @@
 <template>
   <div class="mt-20" v-if="product && variations">
-    <ProductDetails :product="product" :variations="variations" />
+    <ProductsProductDetails :product="product" :variations="variations" />
   </div>
   <div v-else>
     <div class="ms-auto  h-96">
