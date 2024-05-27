@@ -12,6 +12,7 @@ onMounted(() => {
 const addToCart = (product) => {
   cartItems.value.push(product);
   localStorage.setItem('cartItems', JSON.stringify(cartItems.value));
+  
 };
 
 const removeFromCart = (index) => {

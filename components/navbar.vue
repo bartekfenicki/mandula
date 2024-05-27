@@ -1,29 +1,33 @@
 <template>
     <header>
         <nav>
-            <div class=" w-full bg-neutral-600 bg-opacity-70 justify-between items-center gap-4 sm:flex block px-5 md:px-10 lg:px-32">
+            <div class=" w-full bg-[#19151499] justify-between items-center gap-4 sm:flex block px-5 md:px-10 lg:px-32">
                 <div class="flex w-full sm:hidden">
                     <div class=" my-2 flex-col ms-5 justify-end flex">
-                        <img class="w-16 h-16" src="/assets/logos/almond.svg"/>
+                        <NuxtLink to="/">
+                            <img class="w-16 h-16" src="/assets/logos/almond.svg"/>
+                        </NuxtLink>
                     </div>
                 <div class="me-5 ms-auto flex ">
                     <button id="toggleMenu" class="text-[#FDF1EE] hover:text-[#fefaf9]"><img class="w-6 h-6" src="/assets/images/menu.png" /></button>
                 </div>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">
-                    <NuxtLink class="text-[#FDF1EE] hover:text-[#fefaf9]" to="/">Home</NuxtLink>
+                    <NuxtLink class="nav-item-hover" to="/">Home</NuxtLink>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">
-                    <NuxtLink class="text-[#FDF1EE] hover:text-[#fefaf9]" to="/about">About Us</NuxtLink>
+                    <NuxtLink class="nav-item-hover" to="/about">About Us</NuxtLink>
                 </div>
                 <div class="w-28 self-stretch flex-col justify-center items-center hidden sm:flex">
-                    <img class="w-20 h-20 my-2" src="/assets/logos/almond.svg"/>
+                    <NuxtLink to="/">
+                        <img class="w-20 h-20 my-2" src="/assets/logos/almond.svg"/>
+                    </NuxtLink>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">
-                    <NuxtLink class="text-[#FDF1EE] hover:text-[#fefaf9]" to="/products">Shop</NuxtLink>
+                    <NuxtLink class="nav-item-hover" to="/products">Shop</NuxtLink>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">
-                    <NuxtLink class="text-[#FDF1EE] hover:text-[#fefaf9]" to="/contact">Contact Us</NuxtLink>
+                    <NuxtLink class="nav-item-hover" to="/contact">Contact Us</NuxtLink>
                 </div>
                 <div class="text-center justify-end sm:justify-center me-5 sm:me-auto  hidden sm:flex text-block">
                     <button class="" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
@@ -117,7 +121,7 @@ body.drawer-open {
     overflow: hidden;
 }
 .router-link-exact-active {
-  color: #fefaf9;
+  color: #F6CFC5;
 }
 nav {
     font-family: "New Spirit";
