@@ -22,17 +22,7 @@ export default defineNuxtConfig({
       routes.push('/privacy');
       routes.push('/products');
 
-      const { data: products } = useFetch('/api/data')
-
-      const productsValue = products.value;
-
-      if (Array.isArray(productsValue)) {
-
-        productsValue.forEach((product: { id: number; }) => {
-          routes.push(`/products/${product.id}`);
-        });
-      }
-
+      
 
       return routes;
     }
