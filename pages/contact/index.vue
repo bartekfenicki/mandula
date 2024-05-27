@@ -20,7 +20,7 @@
         </li>
       </ul>
     </div>
-    <img class="w-96 h-96 rounded-md" src="/assets/images/cakepop.jpg" alt="">
+    <img class="w-96 h-96 rounded-md" src="/assets/images/cakepop.jpg" alt="contact-photo">
   </div>
 </template>
 
@@ -28,6 +28,16 @@
 definePageMeta({
             layout: 'contact'
         })
+
+useHead({
+  title: 'Contact',
+  meta: [
+    {
+      name: 'Contact Page',
+      content: 'For contacting the company'
+    }
+  ]
+})
 </script>
 
 <style scoped>

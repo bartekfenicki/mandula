@@ -33,6 +33,15 @@ console.log(variations)
 definePageMeta({
   layout: 'products'
 });
+useHead({
+  title: 'Product ' + `${route.params.id}`,
+  meta: [
+    {
+      name: 'Single Product',
+      content: 'Displays a single product based on ID'
+    }
+  ]
+})
 </script> 
 
 

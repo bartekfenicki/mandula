@@ -12,7 +12,7 @@
     />
 
     <div v-if="products">
-      <div v-if="products.length > 0" class=" flex flex-col  md:grid lg:grid-cols-3 md:grid-cols-2  md:ms-64">
+      <div v-if="products.length > 0" class=" flex flex-col  md:grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  md:ms-64">
         <div class="w-full flex justify-center my-5 md:mx-5 mx-auto" v-for="product in products">
           <ProductsProductCard :product="product"/>
         </div>
@@ -121,6 +121,15 @@ const pageChange = () => {
 definePageMeta({
             layout: 'products'
         })
+useHead({
+  title: 'Products',
+  meta: [
+    {
+      name: 'Product page',
+      content: 'Displays all the products'
+    }
+  ]
+})
 </script>  
 
  <style scoped>

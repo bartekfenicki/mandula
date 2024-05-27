@@ -13,14 +13,21 @@
         <HomeNewsletter/>
     </div>
     <div class="container-fluid flex flex-col justify-center items-center">
-        <h1 class="mb-10"> Our Partners </h1>
         <HomePartners/>
     </div>
     </template>
     
     <script setup>
 
-
+useHead({
+  title: 'Home Mandula',
+  meta: [
+    {
+      name: 'Home',
+      content: 'Main page for Mandula'
+    }
+  ]
+})
    
     </script>
 

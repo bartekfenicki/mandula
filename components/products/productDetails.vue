@@ -240,13 +240,7 @@
             <p class="p-product-black ml-6">Sub-total:</p>
             <p class="p-product-black font-bold" id="subtotal">0</p>
           </div>
-          <div class="flex justify-center">
-            <!-- <button
-              class="w-[200px] h-[50px] p-product-black text-lg font-bold py-2 rounded-lg"
-              style="background-color: #f0b9ac"
-            >
-              Add to cart
-            </button> -->
+          <div class="flex justify-center"> 
             <button class="btn" @click="handleAddToCart(product)"> Add to Cart </button>
           </div>
         </div>

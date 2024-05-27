@@ -108,6 +108,15 @@ console.log(aboutImage);
 definePageMeta({
   layout: "about",
 });
+useHead({
+  title: 'About',
+  meta: [
+    {
+      name: 'About Page',
+      content: 'Informative page about the company'
+    }
+  ]
+})
 </script>
 
 <style scoped>

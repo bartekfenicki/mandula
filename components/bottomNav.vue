@@ -2,7 +2,7 @@
   <footer>
     <div class="flex justify-between  py-5 bg-[#191514]">
       <div class="flex flex-col justify-center ms-2 sm:ms-10">
-        <img class="w-14 h-14" src="/assets/logos/almond.svg"/>
+        <img class="w-14 h-14" src="/assets/logos/almond.svg" alt="bottom-logo"/>
       </div>
         <div class="flex justify-center items-center ms-10 sm:ms-16 lg:ms-20">
             <ul class="flex flex-col justify-center items-center md:text-base text-xs">

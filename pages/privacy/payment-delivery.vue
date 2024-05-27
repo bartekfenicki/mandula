@@ -12,6 +12,15 @@ console.log(shipping)
 definePageMeta({
             layout: 'policies'
         })
+useHead({
+  title: 'Delivery',
+  meta: [
+    {
+      name: 'delivery',
+      content: 'informs about the delivery details'
+    }
+  ]
+})
 </script>
 
 <style scoped>
