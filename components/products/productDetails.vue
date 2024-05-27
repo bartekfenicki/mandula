@@ -365,8 +365,7 @@ const largeMenu = [];
 const showMenu = ref(true);
 const showMenuTwo = ref(false);
 const showMenuThree = ref(false);
-const selectedProduct = ref(null);
-const selectedPrice = ref(0);
+
 
 variations.forEach((variation) => {
   if (variation.name.includes("8 Slices")) {
