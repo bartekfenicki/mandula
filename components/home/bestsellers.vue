@@ -1,6 +1,6 @@
 <template>
     <div v-if="products">
-      <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid sm:gap-5">
+      <div class="grid-cols-1  md:grid-cols-3 grid sm:gap-5">
         <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
           <ProductsProductCard :product="product"/>
         </div>

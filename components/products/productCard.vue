@@ -20,7 +20,7 @@ const {product} = defineProps(['product'])
 
 <style scoped>
 .thumb {
-  max-height: 160px;
+  max-height: 190px;
   max-width: 90%;
   margin: 0 auto;
   border-radius: 6px;
@@ -28,6 +28,7 @@ const {product} = defineProps(['product'])
 @media screen and (max-width:768px){
 .thumb {
   margin-left: 10px;
+  max-height: 100px;
 }
 }
 p {

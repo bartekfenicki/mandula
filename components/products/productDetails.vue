@@ -1,5 +1,18 @@
 <template>
   <div v-if="product" class="w-full h-max">
+   
+    <transition name="fade">
+      <div
+        v-show="showAlert"
+        class="p-4 mb-4 fixed bottom-0  md:right-[20%] text-center  w-full md:w-[60%] text-sm text-green-900 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400 transition-opacity duration-500"
+        role="alert"
+      >
+        <span class="font-medium">Success!</span> You have successfully added a product to the cart.
+      </div>
+    </transition>
+   
+
+
     <div class="w-full h-full flex flex-row lg:justify-start justify-center">
       <h1 class="lg:h2-pink mb-10 lg:ms-16 h2-brown">
         {{ product.name }}
@@ -234,7 +247,7 @@
             >
               Add to cart
             </button> -->
-            <button class="btn" @click="addToCart(product)"> Add to Cart </button>
+            <button class="btn" @click="handleAddToCart(product)"> Add to Cart </button>
           </div>
         </div>
       </div>
@@ -310,7 +323,7 @@
         </div>
       </div>
       <div class="flex justify-center">
-        <button class="btn w-32 mt-5" @click="addToCart(product)"> Add to Cart </button>
+        <button class="btn w-32" @click="handleAddToCart(product)"> Add to Cart </button>
       </div>
 
       <div class="w-full flex flex-col justify-between mt-5">
@@ -350,6 +363,7 @@
   <div v-else>
     <p>Loading...</p>
   </div>
+  
 </template>
 
 <script setup>
@@ -361,6 +375,16 @@ const { addToCart } = useCart();
 const smallMenu = [];
 const mediumMenu = [];
 const largeMenu = [];
+
+const showAlert = ref(false);
+
+const handleAddToCart = (product) => {
+  addToCart(product)
+  showAlert.value = true;
+    setTimeout(() => {
+      showAlert.value = false;
+    }, 2000);
+};
 
 const showMenu = ref(true);
 const showMenuTwo = ref(false);
@@ -436,5 +460,15 @@ the description p tag to be unreachable by tailwind so we have to use some basic
   margin-top: 0;
   font-weight: bold;
   width: auto;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
 }
 </style>

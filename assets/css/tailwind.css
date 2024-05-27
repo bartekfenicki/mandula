@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 h1 {
-    @apply font-['New_Spirit'] text-[#F0B9AC] text-2xl sm:text-4xl mt-10 
+    @apply font-['New_Spirit'] text-[#753727] text-2xl sm:text-4xl mt-10 
 }
 
 h2 {
-    @apply font-['New_Spirit'] text-[#F0B9AC]  text-xl sm:text-2xl mx-auto sm:mx-0
+    @apply font-['New_Spirit'] text-[#753727]  text-xl sm:text-2xl mx-auto sm:mx-0
 }
 
  p {
@@ -18,7 +18,7 @@ h2 {
 
 @layer components {
     .btn {
-        @apply  text-black font-['Comfortaa']    px-3 py-2 rounded-md text-sm  w-16 sm:w-32 mx-auto border-2 border-[#F0B9AC] bg-[#fefaf977] hover:bg-[#F0B9AC]
+        @apply  text-[#753727] font-['Comfortaa']    px-3 py-2 rounded-md text-sm  w-16 sm:w-32 mx-auto border-2 border-[#753727] bg-[#fefaf977] hover:bg-[#A64817] hover:text-white
     }
 
     .btn-product {
@@ -26,13 +26,13 @@ h2 {
     }
 
         .card {
-        @apply py-3  w-full md:w-56 xl:w-64  rounded-md  shadow-md md:h-full flex  flex-row items-center md:flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
+        @apply py-3  w-full md:w-56 xl:w-64  rounded-md  shadow-md md:h-full flex  flex-row items-center md:flex-col justify-between border-2 border-[#A64817] bg-[#fefaf977]
     }
     .best-card {
         @apply py-3  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
     }
     .explore-card {
-       @apply  h-40 min-w-40 sm:h-48 sm:min-w-48 lg:h-64 lg:min-w-64  mx-2 md:mx-10 my-2 md:my-5 bg-gray-700 border-2 border-[#F0B9AC] shadow-md rounded-lg flex justify-center items-center 
+       @apply  h-40 min-w-40 sm:h-48 sm:min-w-48 lg:h-64 lg:min-w-64  mx-2 md:mx-10 my-2 md:my-5 bg-gray-700 border-2 border-[#A64817] shadow-md rounded-lg flex justify-center items-center 
     }
     .explore-card-text {
         @apply  text-xl sm:text-3xl text-[#fefaf9] mx-5 text-center font-['New_Spirit']
@@ -88,5 +88,12 @@ h2 {
     .hover-pink {
         @apply hover:bg-[#F0B9AC] 
     }
+    .nav-item-hover {
+        @apply text-[#FDF1EE] hover:text-[#F6CFC5]
+    }
+    .contact-details {
+        @apply text-[#753727]
+    }
+
 
 }
