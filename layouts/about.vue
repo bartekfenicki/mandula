@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full z-10 fixed">
+  <div class="w-full  fixed top-0">
     <Navbar/>
   </div>
 
-  <div class="container-fluid mx-auto">
+  <div class="container-fluid mx-auto mt-20 sm:mt-0 z-0">
     <slot />
   </div>
   <BottomNav/>

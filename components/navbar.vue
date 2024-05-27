@@ -71,7 +71,7 @@
         </li>
         <li class="flex items-center justify-center">
             <NuxtLink to="/checkout" class="items-center justify-center flex">
-                <button class=" btn absolute bottom-10" type="button" data-drawer-target="drawer-navigation" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">
+                <button class=" btn w-24 absolute bottom-10" type="button" data-drawer-target="drawer-navigation" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">
                     checkout
                 </button>
             </NuxtLink>
