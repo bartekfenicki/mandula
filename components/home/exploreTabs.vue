@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid flex flex-col justify-center items-center mb-10">
-        <h1 class="mb-5"> Explore </h1>
+        <span class="fake-h1 mb-5"> Explore </span>
         <div class="container-fluid w-full overflow-x-auto flex justify-start items-center bg-[#b59a9422] border-y-2 border-[#F0B9AC] py-10 scrollspace">
           <NuxtLink :to="{ path: '/products', query: { category: '17' } }">
             <div class="explore-card cakes">
@@ -43,7 +43,7 @@
 
 <style scoped>
 .cakes {
-background-image: url(/assets/images/cakepop.jpg);
+background-image: url(/assets/images/cake.png);
 background-position: center;
 background-size: cover;
 }

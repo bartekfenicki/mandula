@@ -9,7 +9,7 @@
                         </NuxtLink>
                     </div>
                 <div class="me-5 ms-auto flex ">
-                    <button id="toggleMenu" class="text-[#FDF1EE] hover:text-[#fefaf9]"><img class="w-6 h-6" src="/assets/images/menu.png" /></button>
+                    <button id="toggleMenu" class="text-[#FDF1EE] hover:text-[#fefaf9]"><img class="w-6 h-6" src="/assets/images/menu.png" alt="menu-burger" /></button>
                 </div>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">

@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       },
       title: 'Mandula',
       meta: [
-        { name: 'mandula', content: 'Hungarian Cakeshop website' }
+        { name: 'description', content: 'A Lovely Cakeshop located in Budapest, Hungary. Come and see what do we have to offer!' }
       ]
     }
   }

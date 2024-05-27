@@ -1,5 +1,5 @@
 <template>
-  <h1 class="mb-5"> Our Partners </h1>
+  <span class="mb-5 fake-h1"> Our Partners </span>
   <div class="partners-container overflow-x-auto" @mouseover="stopAnimation" @mouseleave="resumeAnimation">
     <div class="partners-wrapper">
       <div v-for="partner in partners" :key="partner.id" class="partner-item">
