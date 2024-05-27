@@ -17,9 +17,11 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
+      titleTemplate: '%s -  Cakeshop',
       title: 'Mandula',
-      meta: [
-        { name: 'description', content: 'A Lovely Cakeshop located in Budapest, Hungary. Come and see what do we have to offer!' }
+      meta: [ 
+        { name: 'description', content: 'A Lovely Cakeshop located in Budapest, Hungary. Come and see what do we have to offer!' },
+        { name: 'keywords', content: 'cakes, bakery, Budapest, custom cakes, desserts' }
       ]
     }
   }
