@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      link: [
+        { rel: 'icon', type: 'svg', href: '/favicon.svg' },
+      ],
       htmlAttrs: {
         lang: 'en'
       },
