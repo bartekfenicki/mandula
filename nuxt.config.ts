@@ -1,13 +1,41 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [ '@nuxtjs/sitemap','@nuxtjs/tailwindcss'],
   runtimeConfig: {
     ConsumerKey: process.env.CONSUMER_KEY_API,
     ConsumerSecret: process.env.CONSUMER_SECRET_API,
     Password: process.env.ADMIN_PASSWORD,
     EmailNews: process.env.EMAIL_USER,
     EmailPass: process.env.EMAIL_PASS
+  },
+  sitemap: {
+    hostname: 'https://mandula17.vercel.app',
+
+    routes: async () => {
+      const routes = [];
+
+      // Add static routes
+      routes.push('/about');
+      routes.push('/checkout');
+      routes.push('/contact');
+      routes.push('/privacy');
+      routes.push('/products');
+
+      const { data: products } = useFetch('/api/data')
+
+      const productsValue = products.value;
+
+      if (Array.isArray(productsValue)) {
+
+        productsValue.forEach((product: { id: number; }) => {
+          routes.push(`/products/${product.id}`);
+        });
+      }
+
+
+      return routes;
+    }
   },
   app: {
     head: {
