@@ -1,6 +1,6 @@
 <template>
     <div v-if="products">
-      <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid gap-5">
+      <div class="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid sm:gap-5">
         <div class="w-full flex justify-center my-5 mx-auto" v-for="product in products" >
           <ProductsProductCard :product="product"/>
         </div>
@@ -12,7 +12,7 @@
     <div class="pagination mb-10">
       <button class="font-['New_Spirit']" @click="prevPage" :class="{ 'disabled': currentPage === 1 }"><<</button>
       <span class="mx-5 font-['New_Spirit'] text-[#F0B9AC]">{{ currentPage }}</span>
-      <button class="font-['New_Spirit']" @click="nextPage" :class="{ 'disabled': currentPage === 2 }">>></button>
+      <button class="font-['New_Spirit']" @click="nextPage" :class="{ 'disabled': currentPage === 3  }">>></button>
     </div>
 
 </template>
@@ -33,11 +33,10 @@ watch(currentPage, (newPage) => {
 const { data: products } = useFetch('/api/data', {
   query: { currentPage, filter, itemsPerPage, category, tag }
 });
-console.log(products)
 
 
 const nextPage = () => {
-  if(currentPage.value < 5){
+  if(products.value.length > itemsPerPage - 1){
     currentPage.value++;
   }
 };

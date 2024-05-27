@@ -4,11 +4,11 @@
       <ul>
         <li class="gap-5 flex items-center flex-col sm:flex-row">
           <h2>Phone:</h2>
-          <h3> +48 454 545 475</h3>
+          <p> +48 454 545 475</p>
         </li>
         <li class="gap-5 my-10 flex items-center flex-col sm:flex-row">
           <h2>Email:</h2>
-          <h3> kian.cockeater@gmail.com</h3>
+          <p> mandula17@gmail.hu</p>
         </li>
         <li class="gap-5 my-5 flex flex-col sm:flex-row">
           <h2>Social Media:</h2>
@@ -16,7 +16,7 @@
         </li>
         <li class="gap-5 my-10 flex items-center flex-col sm:flex-row">
           <h2>Adress:</h2>
-          <h3> Budapest, Mezőtárkány u. 4, 1173 Hungary </h3>
+          <p> Budapest, Mezőtárkány u. 4, 1173 Hungary </p>
         </li>
       </ul>
     </div>

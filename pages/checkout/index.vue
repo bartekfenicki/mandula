@@ -5,11 +5,13 @@
       <button @click="activateTab(2)" :class="{ 'bg-gray-200': activeTab === 2, 'text-gray-900': activeTab === 2, 'bg-gray-100': activeTab !== 2, 'text-gray-600': activeTab !== 2 }" class="w-1/2 py-2 px-4 focus:outline-none">Business</button>
     </div>
     <div v-show="activeTab === 1" class="py-4">
+      <CheckoutItems/>
       <CheckoutBillingInfo/>
       <CheckoutDeliveryMethod/>
       <CheckoutDeliveryInfo/>
     </div>
     <div v-show="activeTab === 2" class="py-4">
+        <CheckoutItems/>
         <CheckoutDeliveryMethod/>
         <CheckoutBillingInfo/>
         <CheckoutDeliveryInfo/>
@@ -19,6 +21,8 @@
 
 <script  setup>
 import { initFlowbite } from 'flowbite'
+
+
 
 // initialize components based on data attribute selectors
 onMounted(() => {

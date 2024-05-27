@@ -11,7 +11,6 @@ export default defineEventHandler(async (event) => {
     const {ConsumerKey} = useRuntimeConfig()
     const {ConsumerSecret} = useRuntimeConfig()
     const {Password} = useRuntimeConfig()
-
     const response = await axios.get(`https://hanacoric.com/wp-json/wc/v3/products?search=${filter}&per_page=${itemsPerPage}&page=${currentPage}&category=${category}&tag=${tag}&consumer_key=${ConsumerKey}&consumer_secret=${ConsumerSecret}`, {
       auth: {
         username: 'bartekfenicki',
@@ -19,7 +18,7 @@ export default defineEventHandler(async (event) => {
       }
     });
   //   const totalItems = parseInt(response.headers.get('X-WP-Total'));
-  //  const totalPages = parseInt(response.headers.get('X-WP-TotalPages'));
+    // const totalPages =  parseInt(response.headers.get('X-WP-TotalPages'));
     return response.data;
   } catch (error) {
     console.error('Error fetching products:', error);

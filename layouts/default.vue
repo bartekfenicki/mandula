@@ -4,8 +4,8 @@
   </div>
   <div class="container-fluid z-0">
     <HeroImg/>
-    <button @click="scrollToSection" class="scroll-button animate-bounce -mt-16 flex flex-col items-center mx-auto">
-      <p class="text-[#FDF1EE]">See More</p>
+    <button @click="scrollToSection" class="scroll-button animate-bounce -mt-16 hidden md:flex flex-col items-center mx-auto">
+      <span  class="text-[#FDF1EE] font-['New_Spirit']">See More</span>
     <img class="h-10 w-10" src="/assets/icons/down-white.png" alt="down">
     </button>
   </div> 

@@ -3,21 +3,30 @@
 @tailwind utilities;
 
 h1 {
-    @apply font-['New_Spirit'] text-[#F0B9AC] text-2xl sm:text-4xl mt-10
+    @apply font-['New_Spirit'] text-[#F0B9AC] text-2xl sm:text-4xl mt-10 
 }
+
 h2 {
     @apply font-['New_Spirit'] text-[#F0B9AC]  text-xl sm:text-2xl mx-auto sm:mx-0
 }
+
  p {
-    @apply font-['New_Spirit'] font-thin
+    @apply font-['Comfortaa']  text-xs sm:text-xs md:text-2xl
 } 
+
+
 
 @layer components {
     .btn {
-        @apply  text-black font-['New_Spirit']    px-3 py-2 rounded-md text-sm w-32 mx-auto border-2 border-[#0d0d0d] bg-[#fefaf977] hover:bg-[#F0B9AC] hover:text-[#fefaf9]
+        @apply  text-black font-['Comfortaa']    px-3 py-2 rounded-md text-sm  w-16 sm:w-32 mx-auto border-2 border-[#F0B9AC] bg-[#fefaf977] hover:bg-[#F0B9AC]
     }
-    .card {
-        @apply py-2  w-screen md:w-56 lg:w-64  rounded-md  shadow-xl md:h-full flex md:flex-col flex-row items-center justify-between border-2 border-[#7E1D3C] bg-[#fefaf977]
+
+    .btn-product {
+        @apply  text-[#191514] font-['New_Spirit']  px-3 py-2 rounded-md sm:text-sm sm:w-[110px] md:text-xl md:w-[200px] mx-auto border-2 border-[#191514] bg-[#FEFAF9]
+    }
+
+        .card {
+        @apply py-3  w-full md:w-56 xl:w-64  rounded-md  shadow-md md:h-full flex  flex-row items-center md:flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
     }
     .best-card {
         @apply py-3  rounded-md  shadow-md md:h-full flex flex-col justify-between border-2 border-[#F0B9AC] bg-[#fefaf977]
@@ -28,4 +37,56 @@ h2 {
     .explore-card-text {
         @apply  text-xl sm:text-3xl text-[#fefaf9] mx-5 text-center font-['New_Spirit']
      }
+
+     .h1-white {
+        @apply font-['New_Spirit'] text-[#FEFAF9] text-4xl sm:text-4xl md:text-6xl lg:text-8xl mt-10 
+     }
+         .h2-brown{
+        @apply font-['New_Spirit'] text-[#A64817] text-3xl sm:text-3xl md:text-4xl lg:text-7xl mx-auto
+    
+    }
+
+    .h2-pink {
+        @apply font-['New_Spirit'] text-[#F0B9AC] text-3xl sm:text-3xl md:text-5xl lg:text-6xl mx-auto
+    
+    
+    }
+
+    .h3-pink {
+        @apply font-['New_Spirit'] text-[#F0B9AC] text-xl sm:text-xl md:text-2xl lg:text-4xl mt-10
+    }
+
+    .p-white {
+        @apply font-['Comfortaa'] text-[#FEFAF9] text-xs sm:text-xs md:text-2xl lg:text-3xl 
+    }
+
+    .p-black{
+        @apply font-['Comfortaa'] text-[#191514] text-xs sm:text-xs md:text-sm lg:text-2xl mt-10
+    
+    }
+
+    .p-pink {
+        @apply font-['New_Spirit'] text-[#F0B9AC] text-xl sm:text-2xl md:text-4xl lg:text-4xl mt-10
+    }
+
+    .p-product {
+        @apply font-['New_Spirit'] text-[#F0B9AC] text-xs sm:text-xs md:text-xl lg:text-3xl mt-10
+    }
+
+    .p-product-black {
+        @apply font-['New_Spirit'] text-[#191514] text-xs sm:text-xl md:text-2xl lg:text-3xl mt-10
+    }
+    
+    .fill-pink {
+        @apply bg-[#F0B9AC] 
+    }
+
+    .fill-white {
+        @apply bg-[#FEFAF9] 
+    }
+
+    .hover-pink {
+        @apply hover:bg-[#F0B9AC] 
+    }
+
 }
