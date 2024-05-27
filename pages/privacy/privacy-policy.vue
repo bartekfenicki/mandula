@@ -11,6 +11,15 @@ console.log(policy)
 definePageMeta({
             layout: 'policies'
         })
+useHead({
+  title: 'Privacy',
+  meta: [
+    {
+      name: 'privacy',
+      content: 'Infroms about privacy and policy'
+    }
+  ]
+})
 </script>
 
 <style scoped>

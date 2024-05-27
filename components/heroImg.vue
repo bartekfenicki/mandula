@@ -4,7 +4,7 @@
      
       <div class="mySlides duration-1000 ease-in-out fade" v-for="heroImage in heroImages">
       
-        <img :src="heroImage.acf.hero_image.link" alt="image" class="w-full duration-1000 ease-in-out">
+        <img :src="heroImage.acf.hero_image.link" alt="hero-image" class="w-full duration-1000 ease-in-out">
   
       </div>
       <div class="absolute left-1/4 top-1/2 md:top-2/3 md:left-1/4 transform -translate-x-1/2 -translate-y-1/2">

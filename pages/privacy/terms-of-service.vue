@@ -11,6 +11,15 @@ console.log(terms)
 definePageMeta({
             layout: 'policies'
         })
+useHead({
+  title: 'Terms',
+  meta: [
+    {
+      name: 'Terms and conditions',
+      content: 'informs about terms and conditions'
+    }
+  ]
+})
 </script>
 
 <style>

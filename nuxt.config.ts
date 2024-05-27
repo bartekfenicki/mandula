@@ -8,5 +8,19 @@ export default defineNuxtConfig({
     Password: process.env.ADMIN_PASSWORD,
     EmailNews: process.env.EMAIL_USER,
     EmailPass: process.env.EMAIL_PASS
+  },
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'svg', href: '/favicon.svg' },
+      ],
+      htmlAttrs: {
+        lang: 'en'
+      },
+      title: 'Mandula',
+      meta: [
+        { name: 'mandula', content: 'Hungarian Cakeshop website' }
+      ]
+    }
   }
 })
