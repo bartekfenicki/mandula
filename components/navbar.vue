@@ -5,7 +5,7 @@
                 <div class="flex w-full sm:hidden">
                     <div class=" my-2 flex-col ms-5 justify-end flex">
                         <NuxtLink to="/">
-                            <img class="w-16 h-16" src="/assets/logos/almond.svg" alt="logo-mobile"/>
+                            <img class="w-16 h-16" src="/assets/logos/Almond-simple.svg" alt="logo-mobile"/>
                         </NuxtLink>
                     </div>
                 <div class="me-5 ms-auto flex ">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="w-28 self-stretch flex-col justify-center items-center hidden sm:flex">
                     <NuxtLink to="/">
-                        <img class="w-20 h-20 my-2" src="/assets/logos/almond.svg" alt="logo-page"/>
+                        <img class="w-20 h-20 my-2" src="/assets/logos/Almond-simple.svg" alt="logo-page"/>
                     </NuxtLink>
                 </div>
                 <div class="grow shrink basis-0 h-6 me-5 sm:me-auto justify-end sm:justify-center items-center hidden sm:flex text-block">
