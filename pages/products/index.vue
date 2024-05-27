@@ -121,15 +121,41 @@ const pageChange = () => {
 definePageMeta({
             layout: 'products'
         })
-useHead({
-  title: 'Products',
-  meta: [
-    {
-      name: 'Product page',
-      content: 'Displays all the products'
+        const router = useRouter();
+
+useHead(() => {
+  const category = router.currentRoute.value.query.category;
+  let pageTitle = 'Products'; // Default title
+
+  if (category) {
+    switch (category) {
+      case '17':
+        pageTitle = 'Cakes';
+        break;
+      case '20':
+        pageTitle = 'Cookies';
+        break;
+      case '22':
+        pageTitle = 'Custom Cakes';
+        break;
+      case '21':
+        pageTitle = 'Makarons';
+        break;
+      case '19':
+        pageTitle = 'Salty Sweets';
+        break;
+      case '18':
+        pageTitle = 'Gluten Free';
+        break;
+      default:
+        pageTitle = 'Products'; // Default title if category not matched
     }
-  ]
-})
+  }
+
+  return {
+    title: pageTitle,
+  };
+});
 </script>  
 
  <style scoped>

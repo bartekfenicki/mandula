@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid flex flex-col items-center justify-center bg-[#F0B9AC] pb-5">
-    <h1 class="text-[#A64817]">Newsletter</h1>
+    <span class="text-[#A64817] fake-h1">Newsletter</span>
     <p class="text-[#A64817] m-5">Never miss on sales and new additions to our delicious products!</p>
     <form @submit.prevent="submitForm" class="block mx-auto sm:flex gap-5">
       <input

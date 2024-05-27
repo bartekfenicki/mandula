@@ -20,7 +20,7 @@
         </li>
       </ul>
     </div>
-    <img class="w-96 h-96 rounded-md" src="/assets/images/cakepop.jpg" alt="contact-photo">
+    <img class="sm:w-96 sm:h-96 w-64 h-64 object-cover rounded-md" src="/assets/images/lady-cake.webp" alt="contact-photo">
   </div>
 </template>
 

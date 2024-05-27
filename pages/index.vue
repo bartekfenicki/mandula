@@ -3,7 +3,7 @@
         <Socials/>
     </div>
     <div class="container-fluid flex flex-col justify-center items-center">
-        <h1> Best Sellers </h1>
+        <span class="fake-h1"> Best Sellers </span>
         <HomeBestsellers/>
     </div>
     <div class="container-fluid">
