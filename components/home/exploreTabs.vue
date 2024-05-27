@@ -44,7 +44,7 @@
 <style scoped>
 .cakes {
   position: relative;
-  background-image: url('/assets/images/cake.png');
+  background-image: url('/assets/images/cake.webp');
   background-position: center;
   background-size: cover;
   opacity: 85%;
