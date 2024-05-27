@@ -61,28 +61,28 @@
   filter: brightness(300%); /* Optional: Increase text brightness if needed */
 }
 .custom-cakes {
-  background-image: url(/assets/images/customC.png);
+  background-image: url(/assets/images/customC.webp);
 background-position: center;
 background-size: cover;
 }
 .sugar-free {
-  background-image: url(/assets/images/glutenfree.png);
+  background-image: url(/assets/images/glutenfree.webp);
 background-position: center;
 background-size: cover;
 }
 .salty {
-  background-image: url(/assets/images/salty.png);
+  background-image: url(/assets/images/salty.webp);
 background-position: center;
 background-size: cover;
 }
 .makaron {
-  background-image: url(/assets/images/makaron.png);
+  background-image: url(/assets/images/makaron.webp);
 background-position: center;
 background-size: cover;
 
 }
 .cookie {
-  background-image: url(/assets/images/cookie.png);
+  background-image: url(/assets/images/cookie.webp);
 background-position: center;
 background-size: cover;
 }
