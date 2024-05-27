@@ -54,7 +54,7 @@ const itemsPerPage = 12;
 
 const route = useRoute();
 
-// Initialize category from query parameters on component mount
+
 onMounted(() => {
   if (route.query.category) {
     category.value = route.query.category as string;
@@ -72,7 +72,6 @@ const updateFilter = (newFilter: string) => {
   filter.value = newFilter;
 };
 
-// modulus + length
 
 // Current page properties
 const currentPage = ref<number>(1);

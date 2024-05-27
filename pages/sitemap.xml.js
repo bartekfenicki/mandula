@@ -7,7 +7,7 @@ export default {
       const posts = await $content('posts').fetch();
       const pages = await $content().only(['path']).fetch();
   
-      const host = 'mandula17.vercel.app'; // Replace this with your domain
+      const host = 'mandula17.vercel.app'; 
   
       const items = [...posts, ...pages].map((item) => ({
         loc: `${host}${item.path}`,
